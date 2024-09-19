@@ -218,3 +218,78 @@ else
 // console.log(primerSymbol === segundoSymbol);
 // console.log(primerSymbol.valueOf());
 // console.log(segundoSymbol.valueOf());
+
+// Null
+console.warn("--- Tipo de  Dato -  NULL (Nulo o Vacio");
+
+//El tipo de dato nulo se asigna cuando el sistema o el usuario saben de la variable pero prefieren dejarlo vacio, bajo su consentimiento, a diferencua de UNDEFINED que es un valor desconocido asignado pior DEFAULT por 35
+
+let nombreUsuario = null;
+let passUsuario = null;
+let generoUsuario = null;
+let estatusRelacionSentimental = null;
+let fecha_ultimoPost;
+
+// Supongamos que estamos programando una RED SOCIAL, tipo FB, en la que parte de la informacion se publicara en el perfil del usuario
+
+// Si el usuario no ha inciciado sesion en el dispositivo movil o en la aplicacion web, puede explorar ontenido de acceso publico y no exisitiria info. para mostrar
+
+// En la HU (Historia de Usuario), que el usuario desea logearse debera ingresar su numero telefonico o correo electronico y una contrase;a que deberemos guarfar en las variables previamente declaradas
+
+// Supongamos que el usuario: Al Farias. con el correo fariasly@gmail.com desea ingresar su contrasena: pass1234
+
+nombreUsuario = "fariasly@gmail.com";
+passUsuario = "pass1234";
+
+// En ese momentode ejecucion del sistema no sabemos su genero, ni su estatus de relacion sentimental
+
+console.log(
+  "El usuario: ",
+  nombreUsuario,
+  " esta intentando logearse con una contrasena de: ",
+  passUsuario
+);
+
+// Lo que prosigue es que el sistema contejara los datos ingresados con la base de datos y en caso de que los datos sean correctos comenzara la sesion en la ploataforma actualizando esos valores
+
+//Dado que Al es dek genero Masculino y denota que su estatus de relacion no ha sido capturado po lo mantiene privado esto genera la actualizacion de los valores de las variables
+
+generoUsuario = "M";
+estatusRelacionSentimental = null;
+
+console.log(
+  "El usuario: ",
+  nombreUsuario,
+  " se ha logeado exitosamente, al tener acceso a su informacion de perfil , podemos deducir que es del genero",
+  generoUsuario,
+  " y que su estatus de relacion es: ",
+  estatusRelacionSentimental,
+  " y su ultima publicacion la realizo el: ",
+  fecha_ultimoPost
+);
+
+// const descuento = null;
+// console.log(typeof descuento);
+
+//// Comparando NULL vs UNDEFINED
+// Si bien UNDEFINED y NULL tienen el valor, no tienen el mismo tipo de dato.
+
+console.log("Comparacion de la identidad entre UNDEFINED y NULL: ");
+fecha_ultimoPost == estatusRelacionSentimental
+  ? console.log("Ambas variables tienen el mismo valor")
+  : console.log("Ambas variables no tienen el mismo valor");
+
+console.log("Comparacion de la equidad entre UNDEFINED y NULL: ");
+fecha_ultimoPost === estatusRelacionSentimental
+  ? console.log("Ambas variables tienen el mismo valor y el mismo tipo de dato")
+  : console.log(
+      "Ambas variables no tienen el mismo valor, pero no el mismo tipo de dato"
+    );
+
+// 8. FUNCTION (funciones)
+
+//Declaramos una funcion que nos permita recibir un parametro en este caso el nombre de la persona a saludar, y le enviamos un saludo, esta funcion la asignamos a una cponstante
+const saludar = function (nombre) {
+  return `Hola, ${nombre}`;
+};
+console.log(saludar("Al"));
