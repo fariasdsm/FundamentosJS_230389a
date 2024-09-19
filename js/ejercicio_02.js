@@ -42,6 +42,6 @@ monto_transaccion = 1500;
 console.log(
   "Tu abono de : ",
   monto_transaccion,
-  " ha sido recibida, tu nuevo saldo es de : ",
+  " ha sido recibida, tu nuevo saldo es De : ",
   saldo_cuenta + monto_transaccion
 );
