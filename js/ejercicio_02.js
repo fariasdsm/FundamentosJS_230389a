@@ -124,3 +124,97 @@ console.log(
 // const numero2 = 30;
 // console.log(typeof String(numero2));
 // console.log(typeof Number(numero));
+
+//Symbol
+console.warn("--- Tipo de dato - SYMBOL (Simbolo o forzar la unidad)");
+const numero1 = 2;
+const numero2 = 2.0;
+const numero3 = "2";
+const numero4 = "2.0";
+const numero5 = Symbol(2);
+const numero6 = Symbol(2.0);
+const numero7 = Symbol("2");
+const numero8 = Symbol("2.0");
+const numero9 = Symbol("2");
+
+// Prueba de generacion 1
+console.log("Prueba de comparación 1");
+if (numero == numero2)
+  console.log(
+    "se han comparado los valores de numero1 y numero2, confirmando que tienen el mismo valor"
+  );
+else
+  console.log(
+    "Se han comparado los valores de numero1 y numero2, dettectando que NO tienene le mismo valor"
+  );
+
+// Prueba de generacion 2
+console.log("Prueba de comparación 2");
+if (numero1 == numero3)
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, confirmando que tienen el mismo valor"
+  );
+else
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que NO tienen el mismo valor"
+  );
+
+// Prueba de comparacion 3
+console.log("Prueba de comparación 3");
+if (numero1 === numero3)
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que tienen el mismo valor"
+  );
+else
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que NO tienen el mismo valor"
+  );
+
+// Prueba de comparacion 4
+console.log('Prueba de comparación 5: es 2 = "2"?');
+if (numero1 === numero4)
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que tienen el mismo valor"
+  );
+else
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que NO tienen el mismo valor"
+  );
+
+// Prueba de comparacion 6
+console.log("Prueba de comparación 6: es 2 = symbol(2)");
+if (numero1 === numero5)
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que tienen el mismo valor"
+  );
+else
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que NO tienen el mismo valor"
+  );
+
+// Prueba de comparacion 7
+console.log("Prueba de comparación 7:");
+if (numero5 === numero7)
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que tienen el mismo valor"
+  );
+else
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que NO tienen el mismo valor"
+  );
+
+// Prueba de comparacion 8
+console.log("Prueba de comparación 8:");
+if (numero5 === numero9)
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que tienen el mismo valor"
+  );
+else
+  console.log(
+    "Se han comparado los valores de numero1 y numero3, detectando que NO tienen el mismo valor"
+  );
+// const primerSymbol = Symbol(30);
+// const segundoSymbol = Symbol(30);
+// console.log(primerSymbol === segundoSymbol);
+// console.log(primerSymbol.valueOf());
+// console.log(segundoSymbol.valueOf());
