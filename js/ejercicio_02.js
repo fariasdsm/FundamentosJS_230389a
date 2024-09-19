@@ -45,3 +45,82 @@ console.log(
   " ha sido recibida, tu nuevo saldo es De : ",
   saldo_cuenta + monto_transaccion
 );
+
+//String o cadenas de texto
+const alumno = "Al Farias Leyva";
+let producto = "Monitor de 20 pulgadas";
+
+const numeroo = "30";
+const numerooo = 30;
+
+console.log(typeof numeroo);
+console.log(typeof numerooo);
+
+//BigInt (Enteros de Dimensiones Amplias)
+
+console.warn("--- Tipo de dato - BIGINT (Numero amplio)");
+const numeroGrande = BigInt(981264654165465489);
+const numeroGrande2 = BigInt(9878489787987897987987);
+let numeroGrande3 = BigInt(9848787897897987897894798798);
+let numeroGrande4 = BigInt(98487878978979878978947987988778);
+
+console.log(
+  "El primer experimento de un numero grande es: ",
+  numeroGrande,
+  " que si es soportado por NUMBER, y su tipo de dato es: ",
+  typeof numeroGrande
+);
+console.log(
+  "El segundo experimento de un numero grande es: ",
+  numeroGrande2,
+  " que si es soportado por NUMBER, y su tipo de dato es: ",
+  typeof numeroGrande2
+);
+console.log(
+  "El tercer experimento de un numero grande es: ",
+  numeroGrande3,
+  " que ya no es soportado por NUMBER, y su tipo de dato es: ",
+  typeof numeroGrande3
+);
+console.log(
+  "El primer cuarto de un numero grande es: ",
+  numeroGrande4,
+  " que ya no es soportado por NUMBER, y su tipo de dato es: ",
+  typeof numeroGrande4
+);
+
+// Para definir ekl tipo de dato BigInt debemos invocar la funcion BigInt o usar la letra "n" al final del numero en la asignacion de valor
+console.log("Declaramos los valores numericos gran tamaño...");
+numeroGrande3 = BigInt(9848787897897987897894798798);
+numeroGrande4 = 98487878978979878978947987988778n;
+
+console.log(
+  "El quinto experimento de un numero grande es : ",
+  numeroGrande3,
+  " que si es soportado por tipo NUMBER, y su tipo de dato es ",
+  typeof numeroGrande3
+);
+console.log(
+  "El sexto experimento de un numero grande es: ",
+  numeroGrande4,
+  " y su tipo de dato es ",
+  typeof numeroGrande4
+);
+
+// Hay que considerar que los tipos de datos declarados como BigInt no son operables con los tipos de number
+let numero = 238;
+
+console.log(
+  "El resultado de la operacion de: numeroGrande4/numero es = a : ",
+  numeroGrande4 / BigInt(numero)
+);
+
+//console.log(typeof numeroGrande);
+// const numero = 10;
+// const numero2 = 20;
+// console.log(numero + Number(numeroGrande));
+
+// const numero = "30";
+// const numero2 = 30;
+// console.log(typeof String(numero2));
+// console.log(typeof Number(numero));
