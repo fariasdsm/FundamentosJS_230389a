@@ -283,7 +283,7 @@ console.log("Comparacion de la equidad entre UNDEFINED y NULL: ");
 fecha_ultimoPost === estatusRelacionSentimental
   ? console.log("Ambas variables tienen el mismo valor y el mismo tipo de dato")
   : console.log(
-      "Ambas variables no tienen el mismo valor, pero no el mismo tipo de dato"
+      "ambas variables No tienen el mismo valor, pero no el mismo tipo de dato"
     );
 
 // 8. FUNCTION (funciones)
