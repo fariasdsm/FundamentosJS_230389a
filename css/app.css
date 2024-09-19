@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #a569bd;
+}
+*,
+*::before,
+*:after {
+  box-sizing: inherit;
+}
+header {
+  padding: 3rem 0;
+}
+header h1 {
+  text-align: center;
+  color: white;
+  font-size: 6rem;
+}
+header p {
+  color: black;
+  text-align: center;
+  font-size: 3.2rem;
+}
+header p a {
+  text-decoration: none;
+  color: blue;
+}
+.DOM {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.DOM h2 {
+  color: white;
+  text-align: center;
+}
+.DOM nav a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+.DOM p {
+  color: #2563eb;
+  font-size: 20px;
+}
+.DOM #formulario {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.DOM #formulario input {
+  display: block;
+  width: 100%;
+  border: none;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
