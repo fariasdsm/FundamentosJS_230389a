@@ -1,8 +1,19 @@
 // Objetos
 
+// const bg =
+//   "linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 86%)";
+// const style_console = `background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`;
 const bg =
-  "linear-gradient(11deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 86%)";
-const style_console = `background: ${bg}; color: white; border-radius: 6px; padding: 4px; font-size: 1.0rem; font-weight: bold`;
+  "linear-gradient(45deg, rgba(160,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(255,100,100,1) 100%)";
+const style_console = `background: ${bg}; 
+                      color: white; 
+                      border-radius: 12px; 
+                      padding: 8px 12px; 
+                      font-size: 1.2rem; 
+                      font-weight: bold; 
+                      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+                      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+                      border: 1px solid rgba(255,255,255,0.3)`;
 
 console.warn("Practica 05: Repaso de Objetos en Java Script");
 //VARIABLES INDEPENDIENTES
@@ -124,5 +135,130 @@ console.log(
   style_console
 );
 
+console.log(`-------------------------------------`);
 console.log("El objeto actualmente tiene los siguientes valores");
-console.log(JSON.stringify(Producto2));
+let tipoDisponibilidad = typeof Producto2.Disponibilidad;
+console.log();
+console.log(JSON.stringify(Producto2, null, 2));
+
+//Agregar nuevas propiedades a un objeto existente
+
+console.log(
+  "%c5.- Actualizacion de las propiedades de un Objeto",
+  style_console
+);
+console.log(JSON.stringify(Comprador));
+console.log("Objeto antes de ser modificado");
+console.table(Comprador);
+
+//Agregando propiedades
+Comprador["Direccion"] =
+  "Benito Juarez #6, Colonia Los Alpes, Juan Galindo, Puebla, Mexico";
+Comprador["Tipo"] = "Premium";
+Comprador["Estatus"] = "Inactivo";
+Comprador["TotalCompra"] = 175000.0;
+console.log("Objeto despues de ser modificado: ");
+console.table(Comprador);
+
+//Eliminar propiedades de un objeto existente
+
+console.log(
+  "%c6.- Eliminacion de propiedadrs de un objeto (MUTACION)",
+  style_console
+);
+console.log("Objeto antes de ser modificado");
+console.table(Pedido);
+//Eliminamos la propiedad de tipopago de pedido
+delete Pedido["TipoPago"];
+console.log("Objeto despues de ser modificado");
+console.table(Pedido);
+
+//
+
+console.log(
+  "%c7.- Metodos par controlar la nmutabilidad de los Objetos, Congelacion (FREEZE)",
+  style_console
+);
+//Si deseamos no permitir que los objetos sean modificados ni en estrutrura, ni el valor, utilizaremos METODO FREEZE
+console.log("La estructura actual del objeto COMPRADOR es: ");
+console.table(Comprador);
+Object.freeze(Comprador);
+//Intentamos agregar, eliminar o modificar los valores de las propiedades
+Comprador.FechaUltimaCompra = "03/07/2024 10:59:33";
+delete Comprador.Tipo;
+Comprador.Direccion =
+  "Calle Pedro Moreno #7, Col. Los Alpes, Juan Galindo, Puebla, Mexico";
+console.log(
+  "Verificamos si se realizaron los cambios en el objeto COMPRADOR: "
+);
+console.table(Comprador);
+
+console.log(
+  "%c8.- Metodos para controlar la mutabilidad de los objetos sellado (SEAL)",
+  style_console
+);
+//Sin embargo, en el caso que desamos pooder modificar los valores de las propiedades del objeto, pero no su estrutura, usaremos SEAL
+Object.seal(Pedido);
+//Intentamos modificar su estructura
+Pedido["FechaPedido"] = " 24/09/2024 16:56:21";
+delete Pedido["Cantidad"];
+console.log("Verificamos si se realizaron los cambios en el objeto PEDIDO: ");
+console.table(Pedido);
+//Ahora intentamos modificar el valor de las propiedades
+Pedido.Cantidad = 5;
+console.log("Verificamos si se realiaron los cambjos en el objeto PEDIDO: ");
+console.table(Pedido);
+
+//Destructuracion de 2 o mas objetos
+
+console.log("%c9.- Destructuracion de 2 o mas objetos", style_console);
+
+const {
+  Precio: productoPrecio,
+  SKU: productoSKU,
+  Marca: productoMarca,
+} = Producto;
+
+const {
+  Correo: clienteCorreo,
+  Pais: clientePais,
+  SaldoActual: clienteSaldo,
+  Tipo: clienteTipo,
+} = Comprador;
+
+// Transformar valores cuantitativos en cualitativos
+
+if (productoPrecio > 2000) productoPrecio = "Caro";
+else productoPrecio = "Barato";
+
+if (clienteSaldo > 0) clienteSaldo = "A favor";
+else if (clienteSaldo < 0) clienteSaldo = "En contra";
+else clienteSaldo = "Sin deuda";
+
+// Transformar valores cualitativos en cuantitativos
+
+let clienteNivel;
+
+if (clienteTipo == "Premium") clienteNivel = 1;
+if (clienteTipo == "Free") clienteNivel = 2;
+if (clienteTipo == "No identificado") clienteNivel = 3;
+
+// Clasificamos al cliente por su País de Origen
+if (clientePaís == "México") clientePais = "Nacional";
+else clientePais = "Extranjero";
+
+// OLE - Object Literal Enhancement
+
+let datosClientesPromociones = {
+  clienteCorreo,
+  clientePais,
+  clienteNivel,
+  clienteSaldo,
+  productoMarca,
+  productoPrecio,
+};
+
+//
+
+console.log("Los datos del cliente y sus habitos de compra son: ");
+console.table(datosClientesPromociones);
