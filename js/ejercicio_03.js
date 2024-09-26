@@ -63,6 +63,7 @@ let Producto = {
   Precio: 4000.0,
   Disponibilidad: false,
   Stock: 0,
+  ID: 3216,
   SKU: "HK23525-S98",
   Imagen: ".",
   Barcode: null,
@@ -84,7 +85,7 @@ else console.log(`Estatus: ${Producto_Stock} unidades disponibles.`);
 console.log("%c3.- Destructuración de Objetos", style_console);
 
 let Producto2 = {
-  Clave: 316,
+  ID: 316,
   Nombre: "Lentes para Sol",
   Marca: "RayBan",
   Modelo: "Aviador",
@@ -98,7 +99,7 @@ let Producto2 = {
 };
 
 let Comprador = {
-  Clave: 3010,
+  ID: 3010,
   Nombre: "Al",
   Apellidos: "Farias Leyva",
   Tipo: "Frecuente",
@@ -108,8 +109,9 @@ let Comprador = {
 };
 
 let Pedido = {
-  Producto_Clave: 316,
-  Comprador_Clave: 3010,
+  ID: 5816,
+  Producto_ID: 316,
+  Comprador_ID: 3010,
   Cantidad: 2,
   Estatus: "Carrito de Compra",
   TipoPago: "Tarjeta de Crédito",
@@ -228,12 +230,12 @@ const {
 
 // Transformar valores cuantitativos en cualitativos
 
-if (productoPrecio > 2000) productoPrecio = "Caro";
-else productoPrecio = "Barato";
+// if (productoPrecio > 2000) productoPrecio = "Caro";
+// else productoPrecio = "Barato";
 
-if (clienteSaldo > 0) clienteSaldo = "A favor";
-else if (clienteSaldo < 0) clienteSaldo = "En contra";
-else clienteSaldo = "Sin deuda";
+// if (clienteSaldo > 0) clienteSaldo = "A favor";
+// else if (clienteSaldo < 0) clienteSaldo = "En contra";
+// else clienteSaldo = "Sin deuda";
 
 // Transformar valores cualitativos en cuantitativos
 
@@ -244,8 +246,8 @@ if (clienteTipo == "Free") clienteNivel = 2;
 if (clienteTipo == "No identificado") clienteNivel = 3;
 
 // Clasificamos al cliente por su País de Origen
-if (clientePaís == "México") clientePais = "Nacional";
-else clientePais = "Extranjero";
+// if (clientePaís == "México") clientePais = "Nacional";
+// else clientePais = "Extranjero";
 
 // OLE - Object Literal Enhancement
 
@@ -262,3 +264,60 @@ let datosClientesPromociones = {
 
 console.log("Los datos del cliente y sus habitos de compra son: ");
 console.table(datosClientesPromociones);
+
+console.log("%c10.- Destructuracion de 2 o mas objetos", style_console);
+
+console.log("Imprimimos la estructura y valores  del Objeto PRODUCTO");
+console.table(Producto);
+
+console.log("Imprimimos la estructura y valores del objeto PEDIDO");
+console.table(Pedido);
+
+//
+
+const Venta = Object.assign(Producto, Pedido);
+console.log("Consultamos este nuevo objeto venta");
+console.table(Venta);
+
+console.log(
+  "%c11.- UNION DE OBJETOS USANDO EL SPREAD OPERATOR (...)",
+  style_console
+);
+
+Producto.ID = 100;
+
+let Venta2 = {
+  producto: { ...Producto },
+  Comprador: { ...Comprador },
+  Pedido: { ...Pedido },
+};
+console.log("Fusionamos los 3 objetos a uno nuevo, sin perdida de informacion");
+console.log(Venta2);
+console.table(Venta2);
+
+// vERIFICAR EL ESTATUS DE MUTABILIDAD DE LOS OBJETOS
+
+console.log("Vamos a verificar el estatus de mutabilidad del objecto PEDIDO");
+console.log("Esta el objeto de Pedido Congelado? : ", Object.isFrozen(Pedido));
+console.log("Esta el objeto de Pedido Sellado? : ", Object.isSealed(Pedido));
+
+console.log(
+  "Vamos a verificar el estatus de mutabilidad del objecto COMPRADOR"
+);
+console.log(
+  "Esta el objeto de Pedido Congelado? : ",
+  Object.isFrozen(Comprador)
+);
+console.log("Esta el objeto de Pedido Sellado? : ", Object.isSealed(Comprador));
+
+console.log("Vamos a verificar el estatus de mutabilidad del objecto PRODUCTO");
+console.log(
+  "Esta el objeto de Pedido Congelado? : ",
+  Object.isFrozen(Producto)
+);
+console.log("Esta el objeto de Pedido Sellado? : ", Object.isSealed(Producto));
+
+// Modificamos la estructura de producto, agregando una nueva propiedad
+Producto["IsLegacy"] = false;
+console.log(Producto);
+console.table(Venta2);
