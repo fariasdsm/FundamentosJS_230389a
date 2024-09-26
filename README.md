@@ -16,7 +16,7 @@ básicos de lógica de programación.
 | 2.  | Inicialización del Proyecto de Fundamentos de JS            | 5           | Finalizada |
 | 3.  | Declaración de Variables (Undefined/Boolean/Nuber)          | 10          | Finalizada |
 | 4.  | Introducción a Objetos (String/BigInt/Symbol/Null/Function) | 6           | Finalizada |
-| 5.  | Introduccion a Objetos                                      | Por Definir | Activa     |
+| 5.  | Introduccion a Objetos                                      | 19          | Activa     |
 
 ### Autor
 
