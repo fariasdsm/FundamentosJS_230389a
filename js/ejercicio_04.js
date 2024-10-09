@@ -297,7 +297,7 @@ console.table(estudiantes);
 
 //Cuando la función splice recibe dos parámetros, se eliminan todos los elementos que no estes en ese rango
 
-estudiantes.push("Raul Pazos");
+estudiantes.push("Raul Artiaga");
 estudiantes.push("Richi Otero");
 estudiantes.push("Angel de Jesus");
 estudiantes.push("Carlos Chicontla");
@@ -355,6 +355,7 @@ console.log(`EL SEPTIMO SIGNO ZODIACAL ES: ${signo7}`);
 //console.log(`EL CUARTO SIGNO ZODIACAL ES: ${signo4}`)
 
 //congelamos el arreglo volviendolo INMUTABLE
+
 Object.freeze(signosZodiacales);
 
 //Ninguna se ejectuca porque nuestro arreglo es inmutable
