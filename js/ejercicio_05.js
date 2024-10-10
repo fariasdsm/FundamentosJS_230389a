@@ -409,25 +409,25 @@ let seriesTrending2 = [
   },
   {
     nombre: "The Boys",
-    temporadas: "5",
+    temporadas: "3",
     viewers: "1200000",
     reproducciones: "1500000",
   },
   {
     nombre: "Los 100",
-    temporadas: "7",
+    temporadas: "3",
     viewers: "1600000",
     reproducciones: "80000000",
   },
   {
     nombre: "Bob Esponja",
     temporadas: "14",
-    viewers: "20 M",
-    reproducciones: "80 M",
+    viewers: "500000000",
+    reproducciones: "60000000",
   },
   {
     nombre: "Reacher",
-    temporadas: "3",
+    temporadas: "4",
     viewers: "400000000",
     reproducciones: "70000000000",
   },
@@ -450,12 +450,12 @@ seriesTrending2.forEach((serie, index) => {
 //Usando filter para filtrar y map para transformar la informacion
 //Lista de series que queremos verificar
 let seriesDeseasas = ["The Witcher", "The Boys", "Loki"];
-//Usando map e includes para filtrar y obtener los nombres de las series con 3 temporadas
+// Usando map e includes para filtrar y obtener los nombres de las series con 3 temporadas
 let seriesConTresTemporadas = seriesTrending2
-  .filter((serie) => serie.temporadas === 3)
-  .map((Serie) => serie.nombre)
+  .filter((serie) => serie.temporadas <= 3)
+  .map((serie) => serie.nombre) // Corregí el paréntesis en el map
   .filter((nombre) => seriesDeseasas.includes(nombre));
 
-//Mostrar los resultados
-console.log("Series con 3 temporadas que estan en la lista deseada");
+// Mostrar los resultados
+console.log("Series con 3 temporadas que están en la lista deseada");
 console.log(seriesConTresTemporadas);

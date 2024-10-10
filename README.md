@@ -18,6 +18,7 @@ básicos de lógica de programación.
 | 4.  | Introducción a Objetos (String/BigInt/Symbol/Null/Function) | 6           | Finalizada |
 | 5.  | Introduccion a Objetos                                      | 19          | Finalizada |
 | 6.  | Repaso de arreglos (Arrays)                                 | 18          | Finalizada |
+| 7.  | Sentencias de Control y ciclos                              | 16          | Finalizada |
 
 ### Autor
 
