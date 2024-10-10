@@ -296,3 +296,166 @@ while (j < dias.length) {
   }
   j++;
 }
+
+console.log(
+  "%c8.- Ciclo Condicionales, que se ejecuta al menos una vez - (DO WHILE))",
+  style_console
+);
+
+//Simulamos una lista de episodios de una temporada
+
+let episodios = [
+  "Episodio 1: El nombre del juego",
+  "Episodio 2: Cereza",
+  "Episodio 3: Conseguir algo",
+  "Episodio 4: La hembra de la especie",
+  "Episodio 5: Bueno para el alma",
+];
+
+let indice = 0;
+let continuarViendo = true; //Esta variable simula la decision del uisuario de continuar viendo
+
+do {
+  console.log(`Reproduciendo ${episodios[indice]}`);
+
+  //simulamos la reproduccion del episodio
+  indice++;
+
+  //simulamos una pregunta al usuario si desea seguir viendo
+  if (indice < episodios.length) {
+    continuarViendo = confirm("Deseas continuar con el siguiente episodio?");
+  } else {
+    continuarViendo = false; // cuando se acaba la lista de episodios
+  }
+} while (continuarViendo && indice < episodios.length);
+
+console.log("Fin de la reproduccion.");
+
+// Ciclo para recorrer objetos iterables como mapas, arreglos, cadenas y conjunto de datos.
+console.log(
+  "%c9.- Ciclo para recorrer elementos finitos - (FOR ... OF))",
+  style_console
+);
+
+let seriesTrending = [
+  {
+    nombre: "La Casa de Papel",
+    temporadas: "5",
+    totalViewers: "6.7 M",
+    totalReprods: "6.7 M",
+  },
+  {
+    nombre: "The Boys",
+    temporadas: "5",
+    totalReprods: "29 M",
+    totalViewers: "1.329 M",
+  },
+  {
+    nombre: "Los 100",
+    temporadas: "7",
+    totalReprods: "1 M",
+    totalViewers: " 2 M",
+  },
+  {
+    nombre: "Bob Esponja",
+    temporadas: "14",
+    totalReprods: "20 M",
+    totalViewers: "80 M",
+  },
+  {
+    nombre: "Reacher",
+    temporadas: "3",
+    totalReprods: "3 M",
+    totalViewers: "5 M",
+  },
+];
+
+for (let serie of seriesTrending) {
+  console.log(`Serie: ${serie.nombre}, Temporada: ${serie.temporadas}`);
+}
+
+try {
+  console.log(`La ultima serie leia fue: ${serie.nombre}`);
+} catch (error) {
+  console.log("Ocurrio un error: " + error.message);
+}
+
+console.log(
+  "%c10.- Ciclo para recorrer las propiedades de elementos finitos - (FOR ... IN))",
+  style_console
+);
+
+//Usando for...in para recorrer cada serie
+for (let i in seriesTrending) {
+  console.log(`Serie ${parseInt(i) + 1}:`);
+  for (let propiedad in seriesTrending[i]) {
+    console.log(`${propiedad}: ${seriesTrending[i][propiedad]}`);
+  }
+  console.log("------------------");
+}
+
+console.log(
+  "%c11.- Ciclo para ininterrumpir para cada uno de los elementos del arreglo (FOR EACH)",
+  style_console
+);
+
+//lista de series de TV trending con temporadas, viewers y reproducciones
+let seriesTrending2 = [
+  {
+    nombre: "La Casa de Papel",
+    temporadas: "5",
+    viewers: "800000",
+    reproducciones: "25000000",
+  },
+  {
+    nombre: "The Boys",
+    temporadas: "5",
+    viewers: "1200000",
+    reproducciones: "1500000",
+  },
+  {
+    nombre: "Los 100",
+    temporadas: "7",
+    viewers: "1600000",
+    reproducciones: "80000000",
+  },
+  {
+    nombre: "Bob Esponja",
+    temporadas: "14",
+    viewers: "20 M",
+    reproducciones: "80 M",
+  },
+  {
+    nombre: "Reacher",
+    temporadas: "3",
+    viewers: "400000000",
+    reproducciones: "70000000000",
+  },
+];
+
+// Usando forEach para recorrer cada serie y calcular la calificacion
+seriesTrending2.forEach((serie, index) => {
+  // Cambié 'Serie' a 'serie'
+  let calificacion = (serie.reproducciones / serie.viewers).toFixed(2);
+  //Calcula la calificación y la redondea a 2 decimales
+  console.log(`Serie: ${index + 1}:`);
+  console.log(`Nombre: ${serie.nombre}:`);
+  console.log(`Temporadas: ${serie.temporadas}:`);
+  console.log(`Viewers: ${serie.viewers}:`);
+  console.log(`Reproducciones: ${serie.reproducciones}:`);
+  console.log(`Calificación: ${calificacion}:`);
+  console.log(`--------------------`);
+});
+
+//Usando filter para filtrar y map para transformar la informacion
+//Lista de series que queremos verificar
+let seriesDeseasas = ["The Witcher", "The Boys", "Loki"];
+//Usando map e includes para filtrar y obtener los nombres de las series con 3 temporadas
+let seriesConTresTemporadas = seriesTrending2
+  .filter((serie) => serie.temporadas === 3)
+  .map((Serie) => serie.nombre)
+  .filter((nombre) => seriesDeseasas.includes(nombre));
+
+//Mostrar los resultados
+console.log("Series con 3 temporadas que estan en la lista deseada");
+console.log(seriesConTresTemporadas);
