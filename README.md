@@ -17,7 +17,7 @@ básicos de lógica de programación.
 | 3.  | Declaración de Variables (Undefined/Boolean/Nuber)          | 10          | Finalizada |
 | 4.  | Introducción a Objetos (String/BigInt/Symbol/Null/Function) | 6           | Finalizada |
 | 5.  | Introduccion a Objetos                                      | 19          | Finalizada |
-| 6.  | Repaso de arreglos (Arrays)                                 | 15          | Activa     |
+| 6.  | Repaso de arreglos (Arrays)                                 | 18          | Finalizada |
 
 ### Autor
 
