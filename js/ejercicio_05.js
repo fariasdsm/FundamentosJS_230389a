@@ -86,11 +86,10 @@ const mayoriaEdadUS = 21;
 
 let evaluarMayoriaEdad = (edad) =>
   edad >= 18 ? "Eres mayor de edad." : "No eres mayor de edad";
-
 console.log("Evaluando la mayoria de edad de una persona...");
 console.log(evaluarMayoriaEdad(edadPersona));
 
-// Sin embargo tenemos que considerar que la mayoria de edad varia en cada pais por cuestiones legales, por lo que debemos considerar un segundo parametro en la evalucacion
+// Sin embargo  enemos que considerar que la mayoria de edad varia en cada pais por cuestiones legales, por lo que debemos considerar un segundo parametro en la evalucacion
 
 evaluarMayoriaEdad = (edad, pais) =>
   edad >= 18 && pais === "MX"
@@ -451,7 +450,7 @@ seriesTrending2.forEach((serie, index) => {
 //Lista de series que queremos verificar
 let seriesDeseasas = ["The Witcher", "The Boys", "Loki"];
 // Usando map e includes para filtrar y obtener los nombres de las series con 3 temporadas
-let seriesConTresTemporadas = seriesTrending2
+let seriesConTresTemporadas = seriesTrending22
   .filter((serie) => serie.temporadas <= 3)
   .map((serie) => serie.nombre) // Corregí el paréntesis en el map
   .filter((nombre) => seriesDeseasas.includes(nombre));
